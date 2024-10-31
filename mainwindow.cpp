@@ -354,6 +354,20 @@ QList<QMap<QString, QVariant>> MainWindow::GetText(int mesid) {
     }
     return messagesList;
 }
+void MainWindow::DeleteUser(int id) {
+    QSqlQuery query(userdb);
+    query.prepare("UPDATE Users SET Name = :name, login = :login, password = :password WHERE Id = :id");
+    query.bindValue(":name","Deleted User");
+    query.bindValue(":login","None");
+    query.bindValue(":password","None");
+    query.bindValue(":id",id);
+    if (!query.exec()) {
+        qDebug() << "не могу удалить" ;
+        return;
+    }
+    qDebug("Удаление успешно");
+    return;
+}
 MainWindow::~MainWindow()
 {
     delete ui;

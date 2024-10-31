@@ -35,6 +35,8 @@ public:
     int GetSecond(int chatid, int firstuser); // возвращает собеседника по id чата и указанию имеющегося собеседника
     QJsonArray GetMessages(int chatid); // возвращает список сообщений по id чата
     QList<QMap<QString, QVariant>> GetText(int mesid); // возвращает время отправления, от кого и текст сообщения по id сообщения
+    // удаление
+    void DeleteUser(int id); // стирает данные о пользователе без удаления чатов и всего остального
 
     ~MainWindow();
 

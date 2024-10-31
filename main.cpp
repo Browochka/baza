@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
     //w.addChat(1,2);
     //w.addMessage("13:50",2,1,"шепчу");
     //QList<QMap<QString, QVariant>> t = w.autorization("romac","1515151");
-    QList<QMap<QString, QVariant>> alpha = w.GetText(1);
-    qDebug() << alpha;
+    //w.DeleteUser(1);
+    //qDebug() << alpha;
 
     w.show();
     return a.exec();
